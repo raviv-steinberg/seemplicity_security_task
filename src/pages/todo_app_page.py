@@ -70,9 +70,7 @@ class TodoAppPage(BasePage):
         self.enter_text(TASK_DESCRIPTION_TEXTBOX, task_description)
         self.open_categories_drop_down_list()
         self.select_category(category=category)
-        time.sleep(1)
         self.click_element_by_text(text='Create Task')
-        time.sleep(3)
 
     def open_categories_drop_down_list(self) -> None:
         """

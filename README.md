@@ -59,7 +59,7 @@ To run the tests with different browsers, you can use the `--browser` command-li
 ## Running Specific Tests
 
 Using pytest tags
-To run tests with a specific tag (`e.g., create_a_task\edit_task\delete_task\search_task`):
+To run tests with a specific tag (`e.g., create_a_task\edit_task\delete_task\search_task\same_task_name_twice\multiple_tasts_creation`):
 
 ```bash
  pytest -m create_a_task
@@ -138,7 +138,7 @@ This test validates the search functionality by creating a task and then searchi
 
 Make sure the corresponding WebDriver executables and browsers are installed on your system. The webdriver_manager will automatically handle the download and installation of WebDriver executables.
 
-`test_add_same_task_name_twice`
+`same_task_name_twice`
 
 This test ensures that the application can handle the creation of multiple tasks with the same name and that the search functionality works correctly in this scenario.
 
@@ -150,3 +150,13 @@ This test ensures that the application can handle the creation of multiple tasks
 6. Verify Task Creation (Second Instance): The test asserts that the second instance of the task also exists in the application by checking its presence with the task name.
 7. Search Task: The task is searched for using its name.
 8. Verify Number of Tasks: The test asserts that two tasks with the same name are found, verifying that the application can handle multiple tasks with identical names and that the search functionality correctly identifies both instances.
+
+`add_randon_number_of_tasks`
+
+This test ensures that the application can handle the creation of a random number of tasks with the same name and that all tasks are correctly counted.
+
+1. Generate a Random Task Name: A random string of 10 characters is generated to be used as the task name.
+2. Initialize TodoAppPage: An instance of TodoAppPage is created using the provided initiate_driver.
+3. Generate Random Task Count: A random number between 20 and 50 is generated to determine how many tasks to create.
+4. Create Multiple Tasks: The test creates the generated number of tasks, each with the same task name, description, and category 'Home'.
+5. Verify Task Count: The test asserts that the total number of tasks created matches the randomly generated number.
