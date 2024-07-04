@@ -57,7 +57,7 @@ class TestTodoApp:
             task_name=task_name), 'Failed to verify task created'
 
     @pytest.mark.search_task
-    def test_add_same_task_name(self, initiate_driver):
+    def test_add_same_task_name_twice(self, initiate_driver):
         task_name = Utils.generate_random_string(length=10)
         todo_app = TodoAppPage(driver=initiate_driver)
 

@@ -138,7 +138,7 @@ This test validates the search functionality by creating a task and then searchi
 
 Make sure the corresponding WebDriver executables and browsers are installed on your system. The webdriver_manager will automatically handle the download and installation of WebDriver executables.
 
-`**test_search_task**`
+`test_add_same_task_name_twice`
 
 This test ensures that the application can handle the creation of multiple tasks with the same name and that the search functionality works correctly in this scenario.
 
