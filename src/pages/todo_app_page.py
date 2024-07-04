@@ -44,6 +44,8 @@ DELETE_TASK_BUTTON = (By.XPATH, '//button[@class=\'MuiButtonBase-root'
                                 'MuiButton-textSizeMedium css-1s4rms\']')
 SEARCH_TASK = (By.XPATH, '//input[@class=\'MuiInputBase-input MuiOutlinedInput-input '
                          'MuiInputBase-inputAdornedStart css-zhq0ju\']')
+ADD_TASK_TEXT = (By.XPATH, '(//li[@class=\'MuiButtonBase-root MuiMenuItem-root '
+                           'MuiMenuItem-gutters MuiMenuItem-root MuiMenuItem-gutters css-w1k5yy\'])[2]')
 
 
 class TodoAppPage(BasePage):
@@ -62,7 +64,8 @@ class TodoAppPage(BasePage):
         :param category: The category of the task to be created.
         :return: None.
         """
-        self.click(ADD_TASK_BUTTON)
+        self.click(USER_SETTINGS_BUTTON)
+        self.click(ADD_TASK_TEXT)
         self.enter_text(TASK_NAME_TEXTBOX, task_name)
         self.enter_text(TASK_DESCRIPTION_TEXTBOX, task_description)
         self.open_categories_drop_down_list()
@@ -221,3 +224,10 @@ class TodoAppPage(BasePage):
         :return: None
         """
         self.enter_text(SEARCH_TASK, task_name)
+
+    def get_number_of_tasks(self) -> int:
+        """
+        Read number of tasks exist.
+        :return: Number of tasks.
+        """
+        return len(self.get_all_tasks())

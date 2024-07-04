@@ -99,7 +99,7 @@ This test verifies the creation of a new task in the Todo application.
 
 1. Generate a Random Task Name: A random string of 10 characters is generated to be used as the task name.
 2. Initialize TodoAppPage: An instance of TodoAppPage is created using the provided initiate_driver.
-3. Create Task: A task is created with the generated task name, a description of 'bla bla', and categorized under 'Personal'.
+3. Create Task: A task is created with the generated task name and categorized under 'Personal'.
 4. Verify Task Creation: The test asserts that the task exists in the application by checking its presence with the task name.
 
 `test_edit_task`
@@ -108,7 +108,7 @@ This test checks the functionality of editing an existing task's name and verify
 
 1. Generate a Random Task Name: A random string of 10 characters is generated to be used as the task name.
 2. Initialize TodoAppPage: An instance of TodoAppPage is created using the provided initiate_driver.
-3. Create Task: A task is created with the generated task name, a description of 'bla bla', and categorized under 'Personal'.
+3. Create Task: A task is created with the generated task name and categorized under 'Personal'.
 4. Open Task Options: The options for the created task are opened.
 5. Edit Task Description: A new random string is generated for the task description, and the task description is updated.
 6. Verify Task Name: The test asserts that the task still exists with the original task name.
@@ -120,7 +120,7 @@ This test ensures that a task can be deleted successfully from the Todo applicat
 
 1. Generate a Random Task Name: A random string of 10 characters is generated to be used as the task name.
 2. Initialize TodoAppPage: An instance of TodoAppPage is created using the provided initiate_driver.
-3. Create Task: A task is created with the generated task name, a description of 'bla bla', and categorized under 'Personal'.
+3. Create Task: A task is created with the generated task name and categorized under 'Work'.
 4. Verify Task Creation: The test asserts that the task exists in the application by checking its presence with the task name.
 5. Delete Task: The created task is deleted.
 6. Verify Task Deletion: The test asserts that the task no longer exists in the application.
@@ -131,9 +131,22 @@ This test validates the search functionality by creating a task and then searchi
 
 1. Generate a Random Task Name: A random string of 10 characters is generated to be used as the task name.
 2. Initialize TodoAppPage: An instance of TodoAppPage is created using the provided initiate_driver.
-3. Create Task: A task is created with the generated task name, a description of 'bla bla', and categorized under 'Personal'.
+3. Create Task: A task is created with the generated task name and categorized under 'Work'.
 4. Verify Task Creation: The test asserts that the task exists in the application by checking its presence with the task name.
 5. Search Task: The task is searched for using its name.
 6. Verify Task Search: The test asserts that the task exists and can be found through the search functionality.
 
 Make sure the corresponding WebDriver executables and browsers are installed on your system. The webdriver_manager will automatically handle the download and installation of WebDriver executables.
+
+`**test_search_task**`
+
+This test ensures that the application can handle the creation of multiple tasks with the same name and that the search functionality works correctly in this scenario.
+
+1. Generate a Random Task Name: A random string of 10 characters is generated to be used as the task name.
+2. Initialize TodoAppPage: An instance of TodoAppPage is created using the provided initiate_driver.
+3. Create Task (First Instance): A task is created with the generated task name and categorized under 'Home'.
+4. Verify Task Creation (First Instance): The test asserts that the first instance of the task exists in the application by checking its presence with the task name.
+5. Create Task (Second Instance): Another task with the same name, description, and category is created.
+6. Verify Task Creation (Second Instance): The test asserts that the second instance of the task also exists in the application by checking its presence with the task name.
+7. Search Task: The task is searched for using its name.
+8. Verify Number of Tasks: The test asserts that two tasks with the same name are found, verifying that the application can handle multiple tasks with identical names and that the search functionality correctly identifies both instances.
