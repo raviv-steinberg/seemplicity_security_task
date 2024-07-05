@@ -1,7 +1,7 @@
 
 # Seemplicity Security Task
 
-This project is designed to automate testing for ESH Login page focusing on login functionality using Selenium and API testing with pytest.
+This project is designed to automate for Todo app page focusing on functionality using Selenium with pytest.
 
 ## Installation
 
